@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Egg Counter</string>
+    <string name="count_eggs_message">The secret number is %1$s</string>
 </resources>
