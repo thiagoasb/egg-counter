@@ -1,5 +1,7 @@
 package com.thiagoaraujo.eggcounter
 
+import android.content.Context
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -7,6 +9,7 @@ import com.thiagoaraujo.eggcounter.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
+    private lateinit var sprefs: SharedPreferences
     private var secretNumber = 0
     private var count = 0
     private var state = 0
@@ -17,7 +20,11 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        secretNumber = getSecretNumber()
+        sprefs = getSharedPreferences("sp_counter", Context.MODE_PRIVATE)
+        count = sprefs.getInt("count", 0)
+        secretNumber = sprefs.getInt("secret", getSecretNumber())
+
+        binding.tvEggCounter.text = count.toString()
 
         binding.ivEgg.setOnClickListener {
             when (state) {
@@ -45,7 +52,12 @@ class MainActivity : AppCompatActivity() {
 
     private fun addAnEgg(secretNumber: Int) {
         count++
-        if (count == secretNumber) {
+        sprefs.edit().apply {
+            putInt("count", count)
+            putInt("secret", secretNumber)
+            apply()
+        }
+        if (count >= secretNumber) {
             binding.ivEgg.setImageResource(R.drawable.many_eggs)
             state = 1
             binding.tvEggCounter.text = count.toString()
