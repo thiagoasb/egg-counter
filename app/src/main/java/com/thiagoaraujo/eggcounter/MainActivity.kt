@@ -2,14 +2,11 @@ package com.thiagoaraujo.eggcounter
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.Editable
-import android.widget.ImageView
-import android.widget.TextView
 import android.widget.Toast
+import com.thiagoaraujo.eggcounter.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var textView: TextView
-    private lateinit var imageView: ImageView
+    private lateinit var binding: ActivityMainBinding
     private var secretNumber = 0
     private var count = 0
     private var state = 0
@@ -17,13 +14,12 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        imageView = findViewById(R.id.iv_egg)
-        textView = findViewById(R.id.tv_egg_counter)
         secretNumber = getSecretNumber()
 
-        imageView.setOnClickListener {
+        binding.ivEgg.setOnClickListener {
             when (state) {
                 0 -> addAnEgg(secretNumber)
                 1 -> {
@@ -36,7 +32,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        imageView.setOnLongClickListener {
+        binding.ivEgg.setOnLongClickListener {
             Toast.makeText(
                 this,
                 getString(R.string.count_eggs_message, secretNumber.toString()),
@@ -50,21 +46,21 @@ class MainActivity : AppCompatActivity() {
     private fun addAnEgg(secretNumber: Int) {
         count++
         if (count == secretNumber) {
-            imageView.setImageResource(R.drawable.many_eggs)
+            binding.ivEgg.setImageResource(R.drawable.many_eggs)
             state = 1
-            textView.text = "$count"
+            binding.tvEggCounter.text = count.toString()
             return
         }
 
-        textView.text = "$count"
+        binding.tvEggCounter.text = count.toString()
     }
 
     private fun resetState() {
         count = 0
         state = 0
         secretNumber = getSecretNumber()
-        imageView.setImageResource(R.drawable.one_egg)
-        textView.text = "$count"
+        binding.ivEgg.setImageResource(R.drawable.one_egg)
+        binding.tvEggCounter.text = count.toString()
         return
     }
 
