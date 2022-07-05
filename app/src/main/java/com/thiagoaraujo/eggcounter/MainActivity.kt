@@ -31,7 +31,6 @@ class MainActivity : AppCompatActivity() {
                 0 -> addAnEgg(secretNumber)
                 1 -> {
                     if (resetState == 3) {
-                        resetState = 0
                         resetState()
                     }
                     resetState++
@@ -70,6 +69,8 @@ class MainActivity : AppCompatActivity() {
     private fun resetState() {
         count = 0
         state = 0
+        resetState = 0
+        sprefs.edit().clear().apply()
         secretNumber = getSecretNumber()
         binding.ivEgg.setImageResource(R.drawable.one_egg)
         binding.tvEggCounter.text = count.toString()
