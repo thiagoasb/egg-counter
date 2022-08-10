@@ -1,11 +1,16 @@
-# :egg: Egg counter
+# Egg counter
 <p>
 <img alt="language" src="https://img.shields.io/badge/Language-Kotlin-blue"> 
-<img alt="autor thiagoasb" src="https://img.shields.io/badge/username-thiagoasb-blue">
 </p>
 
-## Introduction
+## :egg: About
 The egg counter counts the eggs quantity until the a value that was randomized is reached, and then an egg stack appears on the screen.
+
+## ⚙️ Requirements:
+
+## 🏁 How to run:
+```bash
+```
 
 ## How Works?
 - Has 2 states: state 1 when in "one egg image" and state 2 when in "many eggs image"
