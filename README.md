@@ -4,7 +4,7 @@
 </p>
 
 ## :egg: About
-The egg counter counts the eggs quantity until the a value that was randomized is reached, and then an egg stack appears on the screen.
+The egg counter app counts the eggs quantity until the a value that was randomized is reached, and then an egg stack appears on the screen.
 
 ## 🏁 How to run:
 1. Install Android Studio (if don't have it)
