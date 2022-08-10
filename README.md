@@ -8,12 +8,7 @@ The egg counter counts the eggs quantity until the a value that was randomized i
 
 ## 🏁 How to run:
 1. Install Android Studio (if don't have it)
-
-2. Clone the project
-```bash
- git clone https://github.com/thiagoasb/egg-counter.git
-```
-
+2. Clone the project from git
 3. Open the project in Android Studio
 4. Build and run the project
 
