@@ -1,6 +1,6 @@
 # Egg counter
 <p>
-<img alt="language" src="https://img.shields.io/badge/Language-Kotlin-blue"> 
+<img alt="language" src="https://img.shields.io/badge/preview-Click%20to%20see%20app%20preview%20here-blue"> 
 </p>
 
 ## :egg: About
