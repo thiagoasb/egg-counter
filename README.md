@@ -7,8 +7,15 @@
 The egg counter counts the eggs quantity until the a value that was randomized is reached, and then an egg stack appears on the screen.
 
 ## 🏁 How to run:
+1. Install Android Studio (if don't have it)
+
+2. Clone the project
 ```bash
+ git clone https://github.com/thiagoasb/egg-counter.git
 ```
+
+3. Open the project in Android Studio
+4. Build and run the project
 
 ## :memo: How Works?
 - Has 2 states: state 1 when in "one egg image" and state 2 when in "many eggs image"
