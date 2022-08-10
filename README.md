@@ -10,7 +10,7 @@ The egg counter counts the eggs quantity until the a value that was randomized i
 ```bash
 ```
 
-## How Works?
+## :memo: How Works?
 - Has 2 states: state 1 when in "one egg image" and state 2 when in "many eggs image"
 - Increments one to the counter when the user touch on screen
 - Show secret number when holds touch on screen
