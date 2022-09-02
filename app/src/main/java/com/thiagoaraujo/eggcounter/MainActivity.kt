@@ -8,6 +8,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import com.thiagoaraujo.eggcounter.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -20,6 +21,9 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        installSplashScreen()
+
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -96,7 +100,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun createEggCounterDialog() {
         val seeRandomNumber = AlertDialog.Builder(this)
-            .setTitle("Hint")
+            .setTitle(":-)")
             .setMessage(getString(R.string.count_eggs_message, secretNumber.toString()))
             .setPositiveButton("OK") { dialogInterface, _ ->
                 dialogInterface.dismiss()
@@ -107,7 +111,7 @@ class MainActivity : AppCompatActivity() {
     private fun createInfoDialog() {
         val seeRandomNumber = AlertDialog.Builder(this)
             .setTitle("Info")
-            .setMessage("Click until the secret number is reached, hold to reset the counter and if wanted see the secret number on the eye icon")
+            .setMessage("Click until the secret number is reached, hold the screen to reset the counter and if want to see the secret number, press the eye icon")
             .setPositiveButton("OK") { dialogInterface, _ ->
                 dialogInterface.dismiss()
             }.create()
