@@ -1,15 +1,16 @@
 # Egg counter
 <p>
-<img alt="language" src="https://img.shields.io/badge/preview-Click%20to%20see%20app%20preview%20here-blue"> 
+<img alt="splash_screen" style="width:250px" src="https://ik.imagekit.io/thiagoaraujo/splasscreen_-fhFRaXZd.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1662173466840"> 
+<img alt="main_screen" style="width:250px" src="https://ik.imagekit.io/thiagoaraujo/mainscreen_AJlvNH2vJ.jpeg?ik-sdk-version=javascript-1.4.3&updatedAt=1662173466852">
 </p>
 
 ## :egg: About
 The egg counter app counts the eggs quantity until the a value that was randomized is reached, and then an egg stack appears on the screen.
 
 ## 🏁 How to run:
-1. Install Android Studio (if don't have it)
-2. Clone the project from git
-3. Open the project in Android Studio
+1. Clone the project from git
+2. Open Android Studio and choose "Open an Existing Android Studio Project"
+3. Choose the project
 4. Build and run the project
 
 ## :memo: How Works?
@@ -21,4 +22,3 @@ The egg counter app counts the eggs quantity until the a value that was randomiz
 - Change image to many eggs when the counter reaches the secret number
 - Returns to initial state when the user click 3 times on the many eggs image
 - The app can store the data (counter and secret number)
-- [BUG] If the app is in final state and the user close the app, when returns it will show the first state and then will enter in final state again.
